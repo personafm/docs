@@ -1,0 +1,66 @@
+# Web Dependencies
+
+## Information
+
+This project has a couple of web dependencies. We will go through the process of setting up each one
+
+## Supabase
+
+### Project Setup + Environment Variables
+
+1. Initialize a local Supabase project via the CLI
+
+2. Find your database connection string and add it to your code
+
+   Create a a file named `.env` at the root of the `application` subfolder and add your connection string to it
+
+   ```bash
+   DATABASE_URL=your_supabase_db_connection_url
+   ```
+
+3. Setup the database schema
+
+   Run the following command
+
+   ```bash
+   npx drizzle-kit push
+   ```
+
+## Last.fm API
+
+_This step is only required if you will be working persona generation features_
+
+This project uses the last.fm API to get user data which is then fed into the OpenAI API to generate a persona
+
+1. Generate a last.fm API key
+
+   Go to [www.last.fm/api/accounts](https://www.last.fm/api/accounts), create an account if you havent already, then create an API key
+
+2. Add the API key to your code
+
+   Find the following values for your API account and add it to your '.env' file
+
+   ```bash
+   LASTFM_API_KEY=your_lastfm_api_key
+   LASTFM_SHARED_SECRET=your_lastfm_shared_secret
+   ```
+
+## OpenAI API
+
+_This step is only required if you will be working on persona generation features_
+
+1. Create an OpenAI account
+
+   Go to [platform.openai.com/signup](https://platform.openai.com/signup) and create an account if you don't already have one.
+
+   Upon verifying your phone number in your [profile](https://platform.openai.com/settings/profile). You should recieve $5 in API credits that you can use. If you don't recieve the credits, you can contact me at dev@personafm.com and I can temporarily provide you with a API key to use.
+
+2. Create an API key
+
+   Go to [platform.openai.com/api-keys](https://platform.openai.com/api-keys) and create an API key. Add it to your `.env` file. Your `.env` file should now look like this
+
+   ```bash
+   DATABASE_URL=your_supabase_db_connection_url
+   LASTFM_API_KEY=your_lastfm_api_key
+   LASTFM_SHARED_SECRET=your_lastfm_shared_secret
+   ```

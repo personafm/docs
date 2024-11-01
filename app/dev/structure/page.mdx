@@ -1,0 +1,43 @@
+# Directory Structure
+
+## This project uses the Next.js App Router 14.2.x
+
+This page is a work in progress and is currently incomplete
+
+```bash
+.
+├── app
+├── public
+├── supabase
+├── tests
+├── utils
+├── .env (untracked)
+└── <various_configuration_files>
+```
+
+### App Directory
+
+The app directory is where most of the development work happens. There are are four main parts to the app directory.
+
+#### API
+
+```bash
+app/api
+└── <route_name>/route.ts
+```
+
+The api directory contains backend server routes named by the subdirectory names (ex. api/main/route.ts routes to `https://localhost:3000/api/main`).
+
+#### Pages
+
+```bash
+app
+├── ...
+├── <page_name>/page.tsx
+├── page.tsx
+├── layout.tsx
+├── globals.css
+└── ...
+```
+
+A page route is specified by naming the directory which the page is in and adding a `page.tsx` in the directory. The index page will just be at `app/page.tsx`. Next.js also allows use of layouts. The `globals.css` file is used to store global styles and is Tailwind CSS's entry point into the styling of the application
