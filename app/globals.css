@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -95,7 +91,7 @@ body {
     @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-8;
   }
   h2 {
-    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 mt-4;
+    @apply scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0 mt-4;
   }
   h3 {
     @apply scroll-m-20 text-2xl font-semibold tracking-tight mt-4;
@@ -108,5 +104,16 @@ body {
   }
   ol {
     @apply my-6 ml-6 list-decimal [&>li]:mt-2;
+  }
+  button {
+    @apply ml-2 my-2;
+  }
+
+  .markdown {
+    @apply text-white dark:text-white;
+  }
+
+  .markdown a {
+    @apply dark:text-black text-white underline;
   }
 }

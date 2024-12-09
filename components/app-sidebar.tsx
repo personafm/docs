@@ -37,7 +37,7 @@ const categories = [
     ],
   },
   {
-    "Local Development": [
+    Developers: [
       {
         title: "Directory Structure",
         url: "/dev/structure",
@@ -84,21 +84,25 @@ export function AppSidebar() {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem className="pl-2 pt-2 text-2xl font-semibold">
-            Persona.fm Docs
+            <a href="/"> Persona.fm Docs</a>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
         {categories.map((category) => (
           <SidebarGroup key={Object.keys(category)[0]}>
-            <SidebarGroupLabel>{Object.keys(category)[0]}</SidebarGroupLabel>
+            <SidebarGroupLabel className="text-lg font-semibold">
+              {Object.keys(category)[0]}
+            </SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {Object.values(category)[0].map((item: any) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
                       <a href={item.url}>
-                        <span>{item.title}</span>
+                        <span className="text-sm font-semibold">
+                          {item.title}
+                        </span>
                       </a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>

@@ -6,6 +6,7 @@ import ModeToggle from "@/components/mode-toggle";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import Footer from "@/components/footer";
+import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
   title: {
@@ -21,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={GeistSans.className}>
       <body>
         <ThemeProvider
           attribute="class"
@@ -33,7 +34,15 @@ export default function RootLayout({
             <AppSidebar />
             <main>
               <SidebarTrigger />
-              <div className="container ml-12 max-w-[90%]">{children}</div>
+              <div
+                style={{
+                  background:
+                    "linear-gradient(45deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+                }}
+                className="container ml-4 md:ml-12 max-w-[90%] rounded-xl p-4 md:p-12 markdown"
+              >
+                {children}
+              </div>
               <br />
               <div>
                 <Footer />

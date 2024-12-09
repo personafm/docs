@@ -1,43 +1,35 @@
 # Directory Structure
 
-## This project uses the Next.js App Router 14.2.x
+## This project uses the Next.js App Router 15.x.x
 
 This page is a work in progress and is currently incomplete
 
 ```bash
-.
+persona.fm
 ├── app
-├── public
+├── components
+├── db
+├── lib
 ├── supabase
-├── tests
-├── utils
-├── .env (untracked)
 └── <various_configuration_files>
 ```
 
 ### App Directory
 
-The app directory is where most of the development work happens. There are are four main parts to the app directory.
+This directory holds the Next.js application itself. We use the Next.js App Router to handle routing so each page is a `page.tsx` file within a directory that serves as the route name. API routes are in the `app/api` directory.
 
-#### API
+### Components Directory
 
-```bash
-app/api
-└── <route_name>/route.ts
-```
+Shadcn components and custom components are in this directory.
 
-The api directory contains backend server routes named by the subdirectory names (ex. api/main/route.ts routes to `https://localhost:3000/api/main`).
+### DB Directory
 
-#### Pages
+This directory holds the database schema and migrations.
 
-```bash
-app
-├── ...
-├── <page_name>/page.tsx
-├── page.tsx
-├── layout.tsx
-├── globals.css
-└── ...
-```
+### Lib Directory
 
-A page route is specified by naming the directory which the page is in and adding a `page.tsx` in the directory. The index page will just be at `app/page.tsx`. Next.js also allows use of layouts. The `globals.css` file is used to store global styles and is Tailwind CSS's entry point into the styling of the application
+This directory holds utility functions and other miscellaneous code.
+
+### Supabase Directory
+
+This directory holds the Supabase client and configuration for provisioning a database locally
